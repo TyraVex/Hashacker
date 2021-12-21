@@ -10,7 +10,7 @@ FOR /F "delims=: tokens=*" %%A IN ('findstr /B ::: "%~f0"') do @echo(%%A
 :::
 :::
 IF EXIST hashcat.restore SET /P restore=Do you want to restore the previous session? (y/n) : 
-IF /I %restore% == "y" hashcat --restore && PAUSE && EXIT /b
+IF /I %restore% == "y" DO hashcat --restore && PAUSE && EXIT /b
 SET /P hash=Hash type code : 
 SET /P dict=Dictionary file name : 
 
